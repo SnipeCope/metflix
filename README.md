@@ -98,6 +98,21 @@ No third-party Python packages are required.
 
 ### 2. Configure the Client
 
+Fastest option:
+
+```powershell
+python setup.py
+```
+
+This utility:
+
+- detects your local LAN IP
+- prompts for a shared password
+- creates missing config files
+- updates both `config.json` and `server/config.json`
+
+Manual option:
+
 Copy or edit `config.json`:
 
 ```json
@@ -130,6 +145,9 @@ Copy or edit `server/config.json`:
   },
   "library": {
     "videos_root": "./Videos"
+  },
+  "auth": {
+    "password": "CHANGE_ME"
   }
 }
 ```
