@@ -1,0 +1,10 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 9000,
+    "public_host": "met.flix"
+  },
+  "library": {
+    "videos_root": "./Videos"
+  }
+}
