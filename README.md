@@ -159,8 +159,6 @@ Copy or edit `config.json`:
 }
 ```
 
-### 3. Configure the Backend
-
 Copy or edit `server/config.json`:
 
 ```json
@@ -179,13 +177,13 @@ Copy or edit `server/config.json`:
 }
 ```
 
-### 4. Run the Backend
+### 3. Run the Backend
 
 ```powershell
 python server\server.py
 ```
 
-### 5. Run the Web Client
+### 4. Run the Web Client
 
 Open a second terminal:
 
@@ -193,7 +191,7 @@ Open a second terminal:
 python start.py
 ```
 
-### 6. Open the App
+### 5. Open the App
 
 After the hosts-file mapping is configured, use:
 
