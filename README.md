@@ -175,8 +175,6 @@ After the hosts-file mapping is configured, use:
 http://met.flix:8000
 ```
 
-## Local Development
-
 ### Example Local Workflow
 
 ```powershell
