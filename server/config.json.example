@@ -6,5 +6,8 @@
   },
   "library": {
     "videos_root": "./Videos"
+  },
+  "auth": {
+    "password": "CHANGE_ME"
   }
 }
