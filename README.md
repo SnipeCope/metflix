@@ -12,8 +12,6 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Overview
 
-Metflix is now device-agnostic.
-
 The backend is treated as a standard server process and can run on:
 
 - a local development machine
