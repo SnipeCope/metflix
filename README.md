@@ -276,23 +276,6 @@ Videos/
 4. Unlock the UI with the configured password
 5. Browse the library and play videos
 
-## Deployment Notes
-
-Metflix can be deployed beyond local development.
-
-### Local Machine
-
-- Keep both services on the same host
-- Use `127.0.0.1` bind addresses
-- Use hosts-file mapping for `met.flix`
-
-### VPS / Dedicated Server / Cloud
-
-- Set backend `server.host` to `0.0.0.0` if it must listen externally
-- Set client `client.host` to `0.0.0.0` if the UI should be served externally
-- Set `client.public_host` and `server.public_host` to your real hostname or domain
-- Set root `server.url` to the actual backend URL
-
 ## Troubleshooting
 
 ### The web client cannot connect to the backend
