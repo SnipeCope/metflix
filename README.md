@@ -177,14 +177,6 @@ http://met.flix:8000
 
 ## Local Development
 
-Metflix supports running both processes on the same machine without conflicts.
-
-### Why It Works Locally
-
-- the backend uses port `9000`
-- the web client uses port `8000`
-- both bind to `127.0.0.1` by default
-
 ### Example Local Workflow
 
 ```powershell
