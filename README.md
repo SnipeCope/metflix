@@ -27,6 +27,7 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 - Setup: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#setup)
 - Troubleshooting: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#troubleshooting)
+- Development Domain: Made up domain using a custom/local DNS resolver
 
 ## Overview
 
@@ -36,7 +37,7 @@ The backend is treated as a standard server process and can run on:
 - a home server
 - a VPS
 - a dedicated server
-- any other environment that can run Python and access the media library
+- any other environment that can run Python and access the internet
 
 The frontend is a separate web application process that talks to the backend over HTTP.
 
@@ -78,11 +79,11 @@ metflix/
 | Path | Purpose |
 | --- | --- |
 | `setup.py` | Automatically set up configs |
-| `start.py` | Starts the client-facing web app |
-| `config.json` | Root configuration for the client/web process |
-| `server/server.py` | Starts the backend media API |
-| `server/config.json` | Backend configuration |
-| `static/` | Browser assets: HTML, CSS, and JavaScript |
+| `start.py` | Starts hosting the web app |
+| `config.json` | configuration for the web app |
+| `server/server.py` | Starts hosting videos |
+| `server/config.json` | server configuration |
+| `static/` | Web assets (HTML, CSS, JavaScript) |
 
 ## Architecture
 
@@ -92,8 +93,8 @@ Metflix uses a standard client-server model.
 
 | Component | Responsibility |
 | --- | --- |
-| Web client (`start.py`) | Serves the UI, handles sessions, and proxies video playback |
-| Backend service (`server/server.py`) | Scans the library, streams media files, and handles server-side operations |
+| Web client (`start.py`) | Handles UI |
+| Backend service (`server/server.py`) | Holds and scans media to share it. |
 
 ### Default Development Endpoints
 
