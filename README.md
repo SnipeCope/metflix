@@ -10,6 +10,10 @@ Metflix is a self-hosted video streaming project with a separate backend service
 
 It scans a categorized media library from disk, exposes it through a lightweight Python API, and renders a Netflix-style browser UI for playback, shuffle, continue-watching, history, and library management.
 
+## Showcase
+
+![showcase1](assets/screenshots/showcase(1).png)
+
 ## Quick Notes
 
 - Setup: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#setup)
