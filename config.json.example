@@ -1,0 +1,14 @@
+{
+  "client": {
+    "host": "127.0.0.1",
+    "port": 8000,
+    "public_host": "met.flix"
+  },
+  "server": {
+    "url": "http://met.flix:9000",
+    "device_hint": "Metflix backend service"
+  },
+  "auth": {
+    "password": "CHANGE_ME"
+  }
+}
