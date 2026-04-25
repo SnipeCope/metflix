@@ -199,9 +199,17 @@ After the hosts-file mapping is configured, use:
 http://met.flix:8000
 ```
 
+If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/edit/blob/README.md#development-domain-metflix) and try the url below. Replace "WebAppPublicUrlHERE" for the url shown when running `start.py`.
+
+```text
+http://WebAppPublicUrlHERE:8000
+```
+
 ## Development Domain: `met.flix`
 
-Metflix supports a custom development domain so the app can be accessed through a stable internal hostname instead of raw IP addresses.
+Metflix supports a custom development domain so the app can be accessed through custom domain instead of a IP addresse full of numbers.
+
+**Note:** You need to manually update every device to be able to access `met.flix`. If you are fine with an ip address, you do not need to use a 'development domain'.
 
 ### Windows Hosts File Setup
 
@@ -237,7 +245,7 @@ Add:
 
 ### Using `met.flix` Across Devices
 
-For shared LAN development, map `met.flix` to the server machine's LAN IP on each client machine instead of `127.0.0.1`.
+To use `met.flix` across different devices, you need to change the IP address to the server's LAN IP.
 
 Example:
 
