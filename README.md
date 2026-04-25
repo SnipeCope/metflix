@@ -327,10 +327,3 @@ ipconfig /flushdns
 
 - Confirm `library.videos_root` points to the correct path
 - Confirm the media library uses the expected folder structure
-
-## Publishing Checklist
-
-- [ ] Replace or remove any temporary passwords
-- [ ] Verify both config example files are up to date
-- [ ] Add screenshots if desired
-- [ ] Confirm the GitHub badges render correctly after publishing
