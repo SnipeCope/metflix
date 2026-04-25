@@ -10,6 +10,11 @@ Metflix is a self-hosted video streaming project with a separate backend service
 
 It scans a categorized media library from disk, exposes it through a lightweight Python API, and renders a Netflix-style browser UI for playback, shuffle, continue-watching, history, and library management.
 
+## Quick Notes
+
+- Setup: [Here](https://github.com/SnipeCope/metflix/edit/main/README.md#setup)
+- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/edit/main/README.md#troubleshooting)
+
 ## Overview
 
 The backend is treated as a standard server process and can run on:
@@ -95,6 +100,27 @@ Check your Python version:
 python --version
 ```
 
+if you do not have python install it using these commands:
+
+**Windows:** 
+```powershell
+winget install Python.Python.3.14
+```
+
+**MacOS:** 
+```powershell
+brew install python
+```
+
+**Linux:** 
+```powershell
+sudo apt install python3
+```
+
+**Termux:** 
+```powershell
+pkg install python
+```
 No third-party Python packages are required.
 
 ### 2. Configure the Client
@@ -170,19 +196,6 @@ python start.py
 ### 6. Open the App
 
 After the hosts-file mapping is configured, use:
-
-```text
-http://met.flix:8000
-```
-
-### Example Local Workflow
-
-```powershell
-python server\server.py
-python start.py
-```
-
-Then open:
 
 ```text
 http://met.flix:8000
@@ -267,14 +280,6 @@ Videos/
         ├── video-one.mp4
         └── video-two.mkv
 ```
-
-## Usage
-
-1. Start the backend service
-2. Start the web client
-3. Open `http://met.flix:8000`
-4. Unlock the UI with the configured password
-5. Browse the library and play videos
 
 ## Troubleshooting
 
