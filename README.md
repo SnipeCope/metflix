@@ -58,6 +58,7 @@ metflix/
 
 | Path | Purpose |
 | --- | --- |
+| `setup.py` | Automatically set up configs |
 | `start.py` | Starts the client-facing web app |
 | `config.json` | Root configuration for the client/web process |
 | `server/server.py` | Starts the backend media API |
