@@ -1,0 +1,22 @@
+Within the 'Videos' folder, create main categories of your choice (e.g. Horror) and subcategories (e.g. sci-fi) inside the main category, as shown in the following example:
+
+./Videos/
+├── -----------EXAMPLE-------------
+├── Main categories/
+│   └── Sub Categories/
+│       └── somevideo.mvk
+├── -----------EXAMPLE-------------
+├── Horror/
+│   ├── very scary horror movies/
+│   │   ├── test1.mp4
+│   │   └── test2.mp4
+│   └── not so scary horror movies/
+│       ├── test3.mp4
+│       └── test4.mp4
+└── Comedy/
+    ├── very funny comedy shows/
+    │   ├── test5.mp4
+    │   └── test6.mp4
+    └── not so very funny comedy shows/
+        ├── test7.mp4
+        └── test8.mp4
