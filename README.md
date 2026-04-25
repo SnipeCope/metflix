@@ -12,8 +12,8 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Quick Notes
 
-- Setup: [Here](https://github.com/SnipeCope/metflix/edit/main/README.md#setup)
-- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/edit/main/README.md#troubleshooting)
+- Setup: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#setup)
+- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#troubleshooting)
 
 ## Overview
 
