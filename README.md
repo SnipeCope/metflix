@@ -59,6 +59,7 @@ metflix/
 ├── README.md
 ├── config.json
 ├── config.json.example
+├── setup.py
 ├── start.py
 ├── server/
 │   ├── config.json
