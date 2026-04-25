@@ -12,7 +12,7 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Showcase
 
-![showcase1](assets/screenshots/showcase(1).png)
+![showcase1](assets/screenshots/showcase(1).gif)
 
 ## Quick Notes
 
