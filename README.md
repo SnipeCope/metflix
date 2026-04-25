@@ -1,3 +1,5 @@
+<div align="center">
+
 # Metflix
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
@@ -6,13 +8,19 @@
 ![Stars](https://img.shields.io/github/stars/SnipeCope/metflix?style=social)
 ![Forks](https://img.shields.io/github/forks/SnipeCope/metflix?style=social)
 
+</div>
+
 Metflix is a self-hosted video streaming project with a separate backend service and web client.
 
 It scans a categorized media library from disk, exposes it through a lightweight Python API, and renders a Netflix-style browser UI for playback, shuffle, continue-watching, history, and library management.
 
+<div align="center">
+    
 ## Showcase
 
 ![showcase1](assets/screenshots/showcase(1).gif)
+
+</div>
 
 ## Quick Notes
 
