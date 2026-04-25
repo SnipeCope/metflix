@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>METFLIX Manage Watched</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body data-page="manage-watched">
+    <div id="gate-overlay" class="gate-overlay hidden" aria-hidden="true">
+      <section id="startup-screen" class="gate-screen gate-screen--startup">
+        <div class="startup-logo">METFLIX</div>
+      </section>
+      <section id="profile-screen" class="gate-screen hidden">
+        <div class="gate-panel">
+          <h1>Who's Watching?</h1>
+          <button id="profile-button" class="profile-card" type="button">
+            <div class="profile-card__avatar">M</div>
+            <span>Main Profile</span>
+          </button>
+        </div>
+      </section>
+      <section id="password-screen" class="gate-screen hidden">
+        <div class="gate-panel gate-panel--password">
+          <h1>Enter Password</h1>
+          <p>Profile: Main Profile</p>
+          <form id="password-form" class="password-form">
+            <input id="password-input" type="password" autocomplete="current-password" placeholder="Password" required />
+            <button type="submit" class="hero-button hero-button--white">Unlock</button>
+            <button id="back-to-profile" type="button" class="hero-button hero-button--ghost">Back</button>
+            <p id="password-error" class="login-error"></p>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <header class="topbar">
+      <a href="/" class="topbar__brand">METFLIX</a>
+      <nav class="topbar__nav">
+        <a href="/">Home</a>
+        <a href="/#recommended-section">Recommended</a>
+        <a href="/#categories-section">Categories</a>
+        <a href="/history">History</a>
+        <a href="/manage-watched">Manage Watched</a>
+      </nav>
+      <div class="topbar__actions">
+        <button id="random-play" class="action-pill action-pill--light">Play Random</button>
+        <button id="host-toggle" class="action-pill">Turn Hosting Off</button>
+        <label class="toggle-pill" for="auto-delete-toggle">
+          <input id="auto-delete-toggle" type="checkbox" />
+          <span>Auto-delete after close</span>
+        </label>
+        <button id="logout-button" class="action-pill">Lock</button>
+      </div>
+    </header>
+
+    <main class="page page--simple">
+      <section class="page-hero">
+        <h1>Manage Watched Videos</h1>
+        <p>Remove individual watched entries or clear all watched history stored in cookies.</p>
+      </section>
+
+      <section class="page-section">
+        <div id="shuffle-controls" class="shuffle-panel">
+          <div class="shuffle-panel__header">
+            <div>
+              <h2>Shuffle Filters</h2>
+              <p id="shuffle-summary">Loading subcategories...</p>
+            </div>
+            <div class="shuffle-panel__actions">
+              <button id="shuffle-select-all" class="action-pill action-pill--light" type="button">Select All</button>
+              <button id="shuffle-clear-all" class="action-pill" type="button">Clear All</button>
+            </div>
+          </div>
+          <div id="shuffle-subcategories" class="shuffle-panel__grid"></div>
+        </div>
+      </section>
+
+      <section class="page-section page-section--actions">
+        <button id="clear-watched-button" class="hero-button hero-button--ghost">Clear Watched History</button>
+      </section>
+
+      <section class="page-section">
+        <div class="shelf__header">
+          <h2>Watched Videos</h2>
+          <p>Only entries marked as watched are listed here.</p>
+        </div>
+        <div id="manage-watched-list" class="manage-list"></div>
+      </section>
+
+      <footer class="info-tab" id="info-tab">
+        <div class="info-tab__header">
+          <h2>Info</h2>
+          <p>Everything useful in one place.</p>
+        </div>
+        <div class="info-grid" id="info-grid"></div>
+      </footer>
+    </main>
+
+    <div id="player-modal" class="player-modal hidden" aria-hidden="true">
+      <div class="player-modal__backdrop"></div>
+      <div class="player-modal__panel">
+        <button id="close-player" class="player-modal__close" aria-label="Close player">x</button>
+        <div class="player-modal__meta">
+          <p id="player-category" class="player-modal__category"></p>
+          <h3 id="player-title"></h3>
+        </div>
+        <div class="player-modal__actions">
+          <button id="delete-video-button" class="action-pill" type="button">Delete Video</button>
+          <p id="delete-status" class="player-modal__status"></p>
+        </div>
+        <video id="video-player" controls playsinline></video>
+      </div>
+    </div>
+
+    <template id="video-card-template">
+      <article class="title-card">
+        <button class="title-card__button" type="button">
+          <div class="title-card__media">
+            <img class="title-card__thumb" alt="" loading="lazy" decoding="async" />
+            <div class="title-card__gradient"></div>
+            <div class="title-card__preview-label"></div>
+            <div class="title-card__badge-row">
+              <span class="title-card__badge title-card__badge--category"></span>
+              <span class="title-card__badge title-card__badge--status"></span>
+            </div>
+            <div class="title-card__play">Play</div>
+            <div class="title-card__progress"><span></span></div>
+          </div>
+          <div class="title-card__info">
+            <h3 class="title-card__title"></h3>
+            <p class="title-card__meta"></p>
+          </div>
+        </button>
+      </article>
+    </template>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>
