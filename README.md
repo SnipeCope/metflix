@@ -25,8 +25,9 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Quick Notes
 
-- Setup: [Here](https://github.com/SnipeCope/metflix/tree/main#setup)
-- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
+- Newest Release: [Click Here](https://github.com/SnipeCope/metflix/releases/tag/Release)
+- Setup: [Click Here](https://github.com/SnipeCope/metflix/tree/main#setup)
+- Troubleshooting: [Click Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
 - [Development Domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a custom/local DNS resolver
 
 ## Overview
@@ -138,7 +139,14 @@ pkg install python
 ```
 No third-party Python packages are required.
 
-### 2. Configure the Client
+### 2. Download the newest [release](https://github.com/SnipeCope/metflix/releases/tag/Release).
+
+**Git:**
+```
+git clone https://github.com/SnipeCope/metflix
+```
+
+### 3. Configure the Client
 
 Fastest option:
 
@@ -192,13 +200,13 @@ Copy or edit `server/config.json`:
 }
 ```
 
-### 3. Run the Backend
+### 4. Run the Backend
 
 ```powershell
 python server\server.py
 ```
 
-### 4. Run the Web Client
+### 5. Run the Web Client
 
 Open a second terminal:
 
@@ -206,7 +214,7 @@ Open a second terminal:
 python start.py
 ```
 
-### 5. Open the App
+### 6. Open the App
 
 After the hosts-file mapping is configured, use:
 
