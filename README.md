@@ -52,7 +52,7 @@ The frontend is a separate web application process that talks to the backend ove
 - Development domain support via `met.flix`
 - Local and remote deployment compatibility
 
-## Folder Structure
+## Folder Tree
 
 ```text
 metflix/
@@ -154,12 +154,12 @@ Fastest option:
 python setup.py
 ```
 
-This utility:
+This program:
 
-- detects your local LAN IP
+- detects your IP automatically
 - prompts for a shared password
 - creates missing config files
-- updates both `config.json` and `server/config.json`
+- configures both `config.json` and `server/config.json`
 
 Manual option:
 
@@ -200,13 +200,13 @@ Copy or edit `server/config.json`:
 }
 ```
 
-### 4. Run the Backend
+### 4. Run the server
 
 ```powershell
 python server\server.py
 ```
 
-### 5. Run the Web Client
+### 5. Run the Website
 
 Open a second terminal:
 
@@ -222,10 +222,10 @@ After the hosts-file mapping is configured, use:
 http://met.flix:8000
 ```
 
-If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/edit/blob/README.md#development-domain-metflix) and try the url below. Replace "WebAppPublicUrlHERE" for the url shown when running `start.py`.
+If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/edit/blob/README.md#development-domain-metflix) and try the url below (replace "YourLANIP" for the url shown when running `start.py`.)
 
 ```text
-http://WebAppPublicUrlHERE:8000
+http://YourLANIP:8000
 ```
 
 ## Development Domain: `met.flix`
@@ -234,16 +234,16 @@ Metflix supports a custom development domain so the app can be accessed through 
 
 **Note:** You need to manually update every device to be able to access `met.flix`. If you are fine with an ip address, you do not need to use a 'development domain'.
 
-### Windows Hosts File Setup
+### Windows
 
-1. Open Notepad as Administrator.
-2. Open:
+1. Open File Explorer.
+2. Type this on the address bar:
 
 ```text
 C:\Windows\System32\drivers\etc\hosts
 ```
 
-3. Add:
+3. Add    :
 
 ```text
 127.0.0.1 met.flix
@@ -252,7 +252,7 @@ C:\Windows\System32\drivers\etc\hosts
 4. Save the file.
 5. Restart the browser if needed.
 
-### Linux / macOS Hosts File Setup
+### Linux / macOS
 
 Edit:
 
