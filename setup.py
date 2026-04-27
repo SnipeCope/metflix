@@ -1,3 +1,4 @@
+import time
 import getpass
 import json
 import socket
@@ -137,12 +138,15 @@ def configure():
     write_json(ROOT_CONFIG_PATH, root_config)
     write_json(SERVER_CONFIG_PATH, server_config)
 
-    print("Setup complete.")
+    print("Setup complete.\n")
     print(f"Detected local IP: {detected_ip}")
     print(f"Web client URL: http://{detected_ip}:{client_port}")
     print(f"Backend URL: http://{detected_ip}:{server_port}")
     print(f"Updated: {ROOT_CONFIG_PATH}")
-    print(f"Updated: {SERVER_CONFIG_PATH}")
+    print(f"Updated: {SERVER_CONFIG_PATH}\n")
+    print("You can close this window now.")
+
+    time.sleep(5)
 
 
 if __name__ == "__main__":
