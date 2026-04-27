@@ -8,7 +8,7 @@
 ![Stars](https://img.shields.io/github/stars/SnipeCope/metflix?style=social)
 ![Forks](https://img.shields.io/github/forks/SnipeCope/metflix?style=social)
 
-[![GitHub Release](https://img.shields.io/github/v/release/SnipeCope/metflix)](https://github.com/SnipeCope/metflix/releases/tag/Release)
+[![GitHub Release](https://img.shields.io/github/v/release/SnipeCope/metflix)](https://github.com/SnipeCope/metflix/tags)
 </div>
 
 Metflix is a self-hosted video streaming project with a separate backend service and web client.
@@ -25,7 +25,7 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Quick Notes
 
-- Newest Release: [Click Here](https://github.com/SnipeCope/metflix/releases/tag/Release)
+- Newest Release: [Click Here](https://github.com/SnipeCope/metflix/tags)
 - Setup: [Click Here](https://github.com/SnipeCope/metflix/tree/main#setup)
 - Troubleshooting: [Click Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
 - [Development Domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a custom/local DNS resolver
@@ -139,7 +139,7 @@ pkg install python
 ```
 No third-party Python packages are required.
 
-### 2. Download the newest [release](https://github.com/SnipeCope/metflix/releases/tag/Release).
+### 2. Download the newest [release](https://github.com/SnipeCope/metflix/tags).
 
 **Git:**
 ```
@@ -222,7 +222,7 @@ After the hosts-file mapping is configured, use:
 http://met.flix:8000
 ```
 
-If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/edit/blob/README.md#development-domain-metflix) and try the url below (replace "YourLANIP" for the url shown when running `start.py`.)
+If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix) and try the url below (replace "YourLANIP" for the url shown when running `start.py`.)
 
 ```text
 http://YourLANIP:8000
