@@ -25,9 +25,9 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Quick Notes
 
-- Setup: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#setup)
-- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/blob/main/README.md#troubleshooting)
-- Development Domain: Made up domain using a custom/local DNS resolver
+- Setup: [Here](https://github.com/SnipeCope/metflix/tree/main#setup)
+- Troubleshooting: [Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
+- [Development Domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a custom/local DNS resolver
 
 ## Overview
 
