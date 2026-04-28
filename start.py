@@ -475,7 +475,8 @@ def run():
     server = ThreadingHTTPServer((bind_host, port), VideoServerHandler)
     print(f"Web app running on http://{bind_host}:{port}")
     print(f"Web app public URL: http://{public_host}:{port}")
-    print(f"Backend target: {parse_backend_url().geturl()}")
+    print(f"Backend target: {parse_backend_url().geturl()}\n")
+    print("Click Ctrl+C to exit")
     server.serve_forever()
 
 
