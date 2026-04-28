@@ -743,7 +743,8 @@ def run():
         raise
     print(f"Backend service running on http://{bind_host}:{port}")
     print(f"Backend public URL: http://{public_host}:{port}")
-    print(f"Videos root: {videos_root()}")
+    print(f"Videos root: {videos_root()}\n")
+    print("Click Ctrl+C to exit.")
     server.serve_forever()
 
 
