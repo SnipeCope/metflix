@@ -130,7 +130,7 @@ brew install python
 
 **Linux:** 
 ```powershell
-sudo apt install python3
+sudo apt install python-is-python3
 ```
 
 **Termux:** 
