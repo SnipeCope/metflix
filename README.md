@@ -333,7 +333,7 @@ ipconfig /flushdns
 - Change `client.port` or `server.port`
 - Keep the web client and backend on different ports
 
-### Videos do not appear
+### Videos don't appear
 
 - Confirm `library.videos_root` points to the correct path
 - Confirm the media library uses the expected folder structure
