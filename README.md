@@ -49,7 +49,7 @@ The frontend is a separate web application process that talks to the backend ove
 - Custom domain support (optional)
 - Local and remote deployment compatibility
 
-## Folder Tree
+## Project Structure
 
 ```text
 metflix/
