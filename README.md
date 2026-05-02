@@ -1,6 +1,6 @@
 <div align="center">
 
-# Metflix
+![Logo](assets/MetflixIcon.png)
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Architecture](https://img.shields.io/badge/architecture-client--server-blue)
