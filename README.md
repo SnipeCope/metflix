@@ -201,7 +201,7 @@ If it doesn't work, you need to setup the custom [domain](https://github.com/Sni
 http://IP:8000
 ```
 
-## Development Domain: `met.flix`
+## Custom Domain
 
 Metflix supports a custom domain so the app can be accessed through it instead of a IP address.
 
