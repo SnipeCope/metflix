@@ -15,6 +15,8 @@ Metflix is a self-hosted video streaming project with a separate backend service
 
 It scans a categorized media library from disk, exposes it through a lightweight Python API, and renders a Netflix-style browser UI for playback, shuffle, continue-watching, history, and library management.
 
+
+
 <div align="center">
     
 ## Showcase
@@ -25,6 +27,7 @@ It scans a categorized media library from disk, exposes it through a lightweight
 
 ## Quick Notes
 
+- Metflix does NOT fully replicate Netflix's UI.
 - Newest Release: [Click Here](https://github.com/SnipeCope/metflix/tags)
 - Setup: [Click Here](https://github.com/SnipeCope/metflix/tree/main#setup)
 - Troubleshooting: [Click Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
@@ -249,7 +252,7 @@ Example:
 192.168.1.50 met.flix
 ```
 
-## Media Library Layout
+## Video Layout
 
 The backend expects:
 
@@ -262,6 +265,16 @@ Videos/
 ```
 
 The video folder is inside the server folder.
+
+For example:
+
+```text
+Videos/
+└── Cartoons/
+    └── Ben 10/
+        ├── ep1.mp4
+        └── ep2.mkv
+```
 
 ## Troubleshooting
 
