@@ -28,18 +28,11 @@ It scans a categorized media library from disk, exposes it through a lightweight
 - Newest Release: [Click Here](https://github.com/SnipeCope/metflix/tags)
 - Setup: [Click Here](https://github.com/SnipeCope/metflix/tree/main#setup)
 - Troubleshooting: [Click Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
-- [Development Domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a custom/local DNS resolver
+- [Custom](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a local DNS resolver
 
 ## Overview
 
-The backend is treated as a standard server process and can run on:
-
-- a local development machine
-- a home server
-- a VPS
-- a dedicated server
-- any other environment that can run Python and access the internet
-
+The backend is treated as a standard server process and can run on any environment that can run Python and access the internet.
 The frontend is a separate web application process that talks to the backend over HTTP.
 
 ### Key Features
@@ -59,47 +52,21 @@ metflix/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-├── config.json
+├── config.json <-- configures the web app
 ├── config.json.example
-├── setup.py
-├── start.py
+├── setup.py <-- set ups the configs
+├── start.py <-- starts the web app
 ├── server/
-│   ├── config.json
+│   ├── config.json <-- configures the server
 │   ├── config.json.example
-│   └── server.py
+│   └── server.py <-- starts up the server
 └── static/
-    ├── app.js
-    ├── history.html
-    ├── home.html
-    ├── manage-watched.html
-    └── styles.css
+    └── web assets
 ```
 
-### Directory Purpose
+### Default connection endpoints
 
-| Path | Purpose |
-| --- | --- |
-| `setup.py` | Automatically set up configs |
-| `start.py` | Starts hosting the web app |
-| `config.json` | configuration for the web app |
-| `server/server.py` | Starts hosting videos |
-| `server/config.json` | server configuration |
-| `static/` | Web assets (HTML, CSS, JavaScript) |
-
-## Architecture
-
-Metflix uses a standard client-server model.
-
-### Components
-
-| Component | Responsibility |
-| --- | --- |
-| Web client (`start.py`) | Handles UI |
-| Backend service (`server/server.py`) | Holds and scans media to share it. |
-
-### Default Development Endpoints
-
-| Service | Bind Address | Public Development Address |
+| Service | Bind Address | Custom Domain Address |
 | --- | --- | --- |
 | Web client | `127.0.0.1:8000` | `http://met.flix:8000` |
 | Backend service | `127.0.0.1:9000` | `http://met.flix:9000` |
@@ -146,7 +113,7 @@ No third-party Python packages are required.
 git clone https://github.com/SnipeCope/metflix
 ```
 
-### 3. Configure the Client
+### 3. Configure Metflix
 
 Fastest option:
 
@@ -157,13 +124,13 @@ python setup.py
 This program:
 
 - detects your IP automatically
-- prompts for a shared password
-- creates missing config files
+- Asks for a password.
+- creates config files (if they are missing)
 - configures both `config.json` and `server/config.json`
 
 Manual option:
 
-Copy or edit `config.json`:
+Edit `config.json`:
 
 ```json
 {
@@ -182,7 +149,7 @@ Copy or edit `config.json`:
 }
 ```
 
-Copy or edit `server/config.json`:
+Edit `server/config.json`:
 
 ```json
 {
@@ -206,7 +173,7 @@ Copy or edit `server/config.json`:
 python server\server.py
 ```
 
-### 5. Run the Website
+### 5. Run the web app
 
 Open a second terminal:
 
@@ -214,7 +181,13 @@ Open a second terminal:
 python start.py
 ```
 
-### 6. Open the App
+### 6. Setup a custom domain (optional)
+
+Note: Skip this part if you don't understand or if you are just fine with ip addresses.
+
+Click [Here](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix)
+
+### 7. Open the App
 
 After the hosts-file mapping is configured, use:
 
@@ -222,17 +195,17 @@ After the hosts-file mapping is configured, use:
 http://met.flix:8000
 ```
 
-If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix) and try the url below (replace "YourLANIP" for the url shown when running `start.py`.)
+If it doesn't work, you need to setup the custom [domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix) or try the url below (replace "IP" for the url shown when running `start.py`.)
 
 ```text
-http://YourLANIP:8000
+http://IP:8000
 ```
 
 ## Development Domain: `met.flix`
 
-Metflix supports a custom development domain so the app can be accessed through custom domain instead of a IP addresse full of numbers.
+Metflix supports a custom domain so the app can be accessed through it instead of a IP address.
 
-**Note:** You need to manually update every device to be able to access `met.flix`. If you are fine with an ip address, you do not need to use a 'development domain'.
+**Note:** You need to manually update every device to be able to access `met.flix`. If you are fine with an ip address, you do not need to use a 'custom domain'.
 
 ### Windows
 
@@ -268,35 +241,13 @@ Add:
 
 ### Using `met.flix` Across Devices
 
-To use `met.flix` across different devices, you need to change the IP address to the server's LAN IP.
+To use `met.flix` across different devices, you need to change the IP address to the server's LAN IP. Run `start.py` to get your server's LAN IP.
 
 Example:
 
 ```text
 192.168.1.50 met.flix
 ```
-
-## Configuration Guide
-
-### Root `config.json`
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `client.host` | string | Bind address for `start.py` |
-| `client.port` | number | Port for the web client |
-| `client.public_host` | string | Public hostname shown in generated URLs |
-| `server.url` | string | Base URL of the backend service |
-| `server.device_hint` | string | Friendly label shown in the UI info panel |
-| `auth.password` | string | Unlock password for the UI |
-
-### `server/config.json`
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `server.host` | string | Bind address for `server/server.py` |
-| `server.port` | number | Port for the backend API |
-| `server.public_host` | string | Public hostname shown when the backend starts |
-| `library.videos_root` | string | Root directory of the media library |
 
 ## Media Library Layout
 
@@ -310,15 +261,17 @@ Videos/
         └── video-two.mkv
 ```
 
+The video folder is inside the server folder.
+
 ## Troubleshooting
 
-### The web client cannot connect to the backend
+### "The web client cannot connect to the backend"
 
 - Make sure `server/server.py` is running
 - Verify `server.url` in `config.json`
 - Verify the backend host and port in `server/config.json`
 
-### `met.flix` does not resolve
+### "`met.flix` does not resolve"
 
 - Confirm the hosts file entry exists
 - Make sure the browser or terminal is using the updated hosts file
@@ -328,12 +281,13 @@ Videos/
 ipconfig /flushdns
 ```
 
-### Port already in use
+### "Port already in use"
 
 - Change `client.port` or `server.port`
 - Keep the web client and backend on different ports
+- If you are using Termux, end the session and reinstall Termux.
 
-### Videos don't appear
+### "Videos don't appear"
 
 - Confirm `library.videos_root` points to the correct path
 - Confirm the media library uses the expected folder structure
