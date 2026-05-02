@@ -32,6 +32,7 @@ It scans a categorized media library from disk, exposes it through a lightweight
 - Setup: [Click Here](https://github.com/SnipeCope/metflix/tree/main#setup)
 - Troubleshooting: [Click Here](https://github.com/SnipeCope/metflix/tree/main#troubleshooting)
 - [Custom Domain](https://github.com/SnipeCope/metflix/tree/main#development-domain-metflix): Made up domain using a local DNS resolver
+- Also, dont use this for a piracy or illegal file sharing website pls
 
 ## Overview
 
