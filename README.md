@@ -45,6 +45,7 @@ The frontend is a separate web application process that talks to the backend ove
 - Randomized recommendations and shuffle filters
 - Continue watching and watch history
 - Delete and auto-delete already seen videos
+- Fully customisable.
 - Custom domain support (optional)
 - Local and remote deployment compatibility
 
