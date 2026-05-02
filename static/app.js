@@ -23,6 +23,8 @@ const manageWatchedListEl = document.getElementById("manage-watched-list");
 const clearWatchedButton = document.getElementById("clear-watched-button");
 const gateOverlay = document.getElementById("gate-overlay");
 const startupScreen = document.getElementById("startup-screen");
+const startupIntro = document.getElementById("startup-intro");
+const startupFallback = document.getElementById("startup-fallback");
 const profileScreen = document.getElementById("profile-screen");
 const passwordScreen = document.getElementById("password-screen");
 const profileButton = document.getElementById("profile-button");
@@ -55,6 +57,7 @@ let selectedShuffleKeys = new Set();
 let shuffleSelectionInitialized = false;
 let thumbnailObserver = null;
 let activeThumbnailJobs = 0;
+let startupTransitionTimer = 0;
 const pendingThumbnailQueue = [];
 const thumbnailCache = new Map();
 const THUMBNAIL_WIDTH = 256;
@@ -333,6 +336,105 @@ function showGateScreen(screen) {
     }
     node.classList.toggle("hidden", node !== screen);
   });
+  if (screen !== startupScreen) {
+    if (startupTransitionTimer) {
+      window.clearTimeout(startupTransitionTimer);
+      startupTransitionTimer = 0;
+    }
+    if (startupIntro) {
+      try {
+        startupIntro.pause();
+      } catch {
+        // Ignore media pause errors on navigation.
+      }
+    }
+  }
+}
+
+function queueStartupTransition(delay) {
+  if (startupTransitionTimer) {
+    window.clearTimeout(startupTransitionTimer);
+  }
+  startupTransitionTimer = window.setTimeout(() => {
+    if (!gateOverlay || gateOverlay.classList.contains("hidden") || isUnlocked) {
+      return;
+    }
+    showGateScreen(profileScreen);
+  }, delay);
+}
+
+function resetStartupIntro() {
+  if (!startupIntro) {
+    return;
+  }
+  startupIntro.classList.remove("startup-intro--ready");
+  if (startupFallback) {
+    startupFallback.hidden = false;
+  }
+  try {
+    startupIntro.pause();
+    startupIntro.currentTime = 0;
+  } catch {
+    // Ignore media reset issues when the browser has not loaded metadata yet.
+  }
+}
+
+function playStartupIntro() {
+  if (!startupIntro) {
+    queueStartupTransition(1100);
+    return;
+  }
+
+  resetStartupIntro();
+
+  const revealIntro = () => {
+    startupIntro.classList.add("startup-intro--ready");
+    if (startupFallback) {
+      startupFallback.hidden = true;
+    }
+  };
+
+  startupIntro.addEventListener("canplay", revealIntro, { once: true });
+  startupIntro.addEventListener("playing", revealIntro, { once: true });
+  startupIntro.addEventListener(
+    "loadedmetadata",
+    () => {
+      const durationMs =
+        Number.isFinite(startupIntro.duration) && startupIntro.duration > 0
+          ? Math.ceil(startupIntro.duration * 1000) + 250
+          : 6000;
+      queueStartupTransition(durationMs);
+    },
+    { once: true }
+  );
+  startupIntro.addEventListener(
+    "ended",
+    () => {
+      queueStartupTransition(0);
+    },
+    { once: true }
+  );
+  startupIntro.addEventListener(
+    "error",
+    () => {
+      if (startupFallback) {
+        startupFallback.hidden = false;
+      }
+      queueStartupTransition(1400);
+    },
+    { once: true }
+  );
+
+  queueStartupTransition(6000);
+  const playAttempt = startupIntro.play();
+  if (playAttempt && typeof playAttempt.catch === "function") {
+    playAttempt.catch(() => {
+      if (startupFallback) {
+        startupFallback.hidden = false;
+      }
+      queueStartupTransition(1400);
+    });
+  }
 }
 
 async function startGateFlow() {
@@ -342,6 +444,7 @@ async function startGateFlow() {
 
   isUnlocked = await checkSession();
   if (isUnlocked) {
+    resetStartupIntro();
     gateOverlay.classList.add("hidden");
     gateOverlay.setAttribute("aria-hidden", "true");
     return;
@@ -350,10 +453,7 @@ async function startGateFlow() {
   gateOverlay.classList.remove("hidden");
   gateOverlay.setAttribute("aria-hidden", "false");
   showGateScreen(startupScreen);
-
-  window.setTimeout(() => {
-    showGateScreen(profileScreen);
-  }, 1100);
+  playStartupIntro();
 }
 
 function buildBadgeLabel(video) {
