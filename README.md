@@ -11,9 +11,9 @@
 [![GitHub Release](https://img.shields.io/github/v/release/SnipeCope/metflix)](https://github.com/SnipeCope/metflix/tags)
 </div>
 
-Metflix is a self-hosted video streaming project with a separate backend service and web client.
+Metflix is a self-hosted video streaming project with a separate backend service and web client (so you could host the web app and the videos in different servers.)
 
-It scans a categorized media library from disk, exposes it through a lightweight Python API, and renders a Netflix-style browser UI for playback, shuffle, continue-watching, history, and library management.
+It features categories, a Netflix UI, for playback, shuffle, continue-watching, history, library management and it's super lightweight just taking around 5MB of storage.
 
 
 
