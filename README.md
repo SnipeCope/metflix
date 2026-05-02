@@ -21,7 +21,9 @@ It features categories, a Netflix UI, for playback, shuffle, continue-watching, 
     
 ## [🖼️] Showcase
 
-![showcase1](assets/screenshots/showcase(1).gif)
+![showcase1](assets/Showcase.gif)
+
+[(1080p)](assets/Showcase.mp4)
 
 </div>
 
