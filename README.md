@@ -41,12 +41,11 @@ The frontend is a separate web application process that talks to the backend ove
 
 ### Key Features
 
-- Category and subcategory-based library browsing
+- Category and subcategory-based library
 - Randomized recommendations and shuffle filters
-- Continue-watching and watch-history tracking
-- Delete and auto-delete support
-- Config-driven client/server setup
-- Development domain support via `met.flix`
+- Continue watching and watch history
+- Delete and auto-delete already seen videos
+- Custom domain support (optional)
 - Local and remote deployment compatibility
 
 ## Folder Tree
