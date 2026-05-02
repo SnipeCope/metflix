@@ -19,13 +19,13 @@ It features categories, a Netflix UI, for playback, shuffle, continue-watching, 
 
 <div align="center">
     
-## Showcase
+## [🖼️] Showcase
 
 ![showcase1](assets/screenshots/showcase(1).gif)
 
 </div>
 
-## Quick Notes
+## [📝] Quick Notes
 
 - Metflix does NOT fully replicate Netflix's UI.
 - Newest Release: [Click Here](https://github.com/SnipeCope/metflix/tags)
@@ -67,6 +67,8 @@ metflix/
 └── static/
     └── web assets
 ```
+
+Understand this first ⤴
 
 ### Default connection endpoints
 
