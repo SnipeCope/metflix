@@ -13,7 +13,7 @@
 
 Metflix is a self-hosted video streaming project with a separate backend service and web client (so you could host the web app and the videos in different servers.)
 
-It features categories, a Netflix UI, for playback, shuffle, continue-watching, history, library management and it's super lightweight just taking around 800KB of storage.
+It features categories, a Netflix UI, for playback, shuffle, continue-watching, history, library management and it's super lightweight just taking around ~800KB (~500KB compressed) of storage.
 
 
 
