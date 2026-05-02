@@ -333,7 +333,7 @@ class VideoServerHandler(SimpleHTTPRequestHandler):
         if parsed.path.startswith("/api/"):
             return self.handle_api_get(parsed.path)
 
-        if parsed.path == "/static/styles.css" or parsed.path == "/static/app.js":
+        if parsed.path.startswith("/static/"):
             return super().do_GET()
 
         if parsed.path in PAGE_ROUTES:
