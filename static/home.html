@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>METFLIX</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16.png" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body data-page="home">
     <div id="gate-overlay" class="gate-overlay hidden" aria-hidden="true">
       <section id="startup-screen" class="gate-screen gate-screen--startup">
-        <div class="startup-logo">METFLIX</div>
+        <video id="startup-intro" class="startup-intro" autoplay muted playsinline preload="auto">
+          <source src="/static/MetflixIntroDark.webm" type="video/webm" />
+        </video>
+        <div id="startup-fallback" class="startup-fallback">
+          <img src="/static/MetflixIcon.png" alt="Metflix logo" class="startup-fallback__logo" />
+          <div class="startup-fallback__wordmark">METFLIX</div>
+        </div>
       </section>
       <section id="profile-screen" class="gate-screen hidden">
         <div class="gate-panel">
           <h1>Who's Watching?</h1>
           <button id="profile-button" class="profile-card" type="button">
-            <div class="profile-card__avatar">M</div>
+            <div class="profile-card__avatar">
+              <img src="/static/MetflixIcon.png" alt="Metflix profile icon" />
+            </div>
             <span>Main Profile</span>
           </button>
         </div>
@@ -35,7 +46,9 @@
     </div>
 
     <header class="topbar">
-      <a href="/" class="topbar__brand">METFLIX</a>
+      <a href="/" class="topbar__brand topbar__brand--logo-only" aria-label="Metflix">
+        <img src="/static/MetflixIcon.png" alt="" class="topbar__brand-mark" />
+      </a>
       <nav class="topbar__nav">
         <a href="#billboard">Home</a>
         <a href="#recommended-section">Recommended</a>
@@ -58,7 +71,7 @@
       <section class="billboard" id="billboard">
         <div class="billboard__backdrop" id="billboard-backdrop"></div>
         <div class="billboard__content">
-          <p class="billboard__tag">Private phone streaming</p>
+          <p class="billboard__tag">Personal streaming library</p>
           <h1 id="billboard-title">Your personal METFLIX</h1>
           <p id="billboard-description" class="billboard__description"></p>
           <div class="billboard__buttons">
