@@ -37,14 +37,6 @@ const HISTORY_COOKIE = "metflix_history";
 const AUTO_DELETE_COOKIE = "metflix_auto_delete";
 const HISTORY_MAX_ENTRIES = 30;
 const TITLE_SOFT_LIMIT = 30;
-const REMOVED_TITLE_KEYWORDS = new Set(["1boy", "1girl", "1girls", "2d", "3d", "boy", "girl", "girls", "d", "rx"]);
-const TRAILING_KEYWORD_MAP = new Map([
-  ["fpsblyck", "Fpsblyck"],
-  ["softshikioni", "Softshikioni"],
-  ["sunfanart", "Sunfanart"],
-  ["suuru", "Suuru"],
-  ["z1g3d", "Z1g3d"],
-]);
 const AUTO_DELETE_DELAY_MS = 15000;
 
 let library = null;
@@ -175,52 +167,7 @@ function prettyLabel(value) {
 }
 
 function prettyTitle(value) {
-  if (!value) {
-    return "";
-  }
-  const source = value.replace(/\.[^/.]+$/, "");
-  const bracketNumbers = [];
-  source.replace(/[\[(]([^\])]+)[\])]/g, (_, inner) => {
-    const numbers = inner.match(/\d+/g);
-    if (numbers) {
-      bracketNumbers.push(...numbers);
-    }
-    return _;
-  });
-
-  let normalized = source;
-  normalized = normalized.replace(/[\[(][^\])]*[\])]/g, " ");
-  normalized = normalized.replace(/ai[\s_-]*generated/gi, " ");
-  normalized = normalized.replace(/[_-]+/g, " ").trim();
-
-  const suffixKeywords = [];
-  const seenSuffixKeywords = new Set();
-  const mainTokens = [];
-
-  normalized.split(/\s+/).filter(Boolean).forEach((token) => {
-    const lower = token.toLowerCase();
-    if (TRAILING_KEYWORD_MAP.has(lower)) {
-      if (!seenSuffixKeywords.has(lower)) {
-        seenSuffixKeywords.add(lower);
-        suffixKeywords.push(TRAILING_KEYWORD_MAP.get(lower));
-      }
-      return;
-    }
-    const withoutNumbers = token.replace(/\d+/g, "");
-    const strippedLower = withoutNumbers.toLowerCase();
-    if (!withoutNumbers || REMOVED_TITLE_KEYWORDS.has(lower) || REMOVED_TITLE_KEYWORDS.has(strippedLower)) {
-      return;
-    }
-    mainTokens.push(withoutNumbers);
-  });
-
-  const mainTitle = mainTokens.join(" ").replace(/\s+/g, " ").trim();
-  const titledMain = mainTitle ? mainTitle.charAt(0).toUpperCase() + mainTitle.slice(1) : "";
-  if (!titledMain && suffixKeywords.length) {
-    const postLabel = bracketNumbers.length ? `Post(${bracketNumbers.join(", ")})` : "Post";
-    return `${postLabel} - ${suffixKeywords.join(" - ")}`;
-  }
-  return suffixKeywords.length ? `${titledMain} - ${suffixKeywords.join(" - ")}` : titledMain;
+  return prettyLabel(value);
 }
 
 function pluralize(count, word) {
