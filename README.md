@@ -9,6 +9,9 @@
 ![Forks](https://img.shields.io/github/forks/SnipeCope/metflix?style=social)
 
 [![GitHub Release](https://img.shields.io/github/v/release/SnipeCope/metflix)](https://github.com/SnipeCope/metflix/tags)
+
+ _"Your Personal Metflix"_
+
 </div>
 
 Metflix is a self-hosted video streaming project with a separate backend service and web client (so you could host the web app and the videos in different servers.)
