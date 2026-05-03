@@ -10,7 +10,7 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/SnipeCope/metflix)](https://github.com/SnipeCope/metflix/tags)
 
- _"Your Personal Metflix"_
+ _"Your Personal Netflix"_
 
 </div>
 
